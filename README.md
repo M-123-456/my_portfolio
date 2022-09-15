@@ -11,8 +11,9 @@
 Open the project with with your browser [http://localhost:3000](http://localhost:3000)
 
 ### This project includes
+Docs:
 [Next.js](https://nextjs.org/)
 [tailwind](https://tailwindcss.com/);
 
-
+### Deployment
 Visit my website: 
