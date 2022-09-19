@@ -1,5 +1,6 @@
 import React from 'react'
 import PrimaryButton from '../../buttons/PrimaryButton'
+import SecondaryButton from '../../buttons/SecondaryButton'
 import Footer from '../../Footer'
 
 type Props = {}
@@ -7,7 +8,7 @@ type Props = {}
 const Contact = (props: Props) => {
   return (
     <section
-        className="min-h-screen pt-16 px-4 flex justify-center relative bg-redSalsa bg-[linear-gradient(160deg,_#F15156_40%,_#d8d8d8_40%)] md:pt-32 "
+        className="min-h-screen px-4 pt-16 md:pt-32 flex justify-center relative bg-redSalsa bg-[linear-gradient(160deg,_#F15156_40%,_#d8d8d8_40%)]"
         id="Contact"
     >
       <div
@@ -45,14 +46,14 @@ const Contact = (props: Props) => {
               className="mt-4 flex justify-center gap-6"
             >
               <li>
-                <PrimaryButton>
+                <SecondaryButton>
                   <a href="https://github.com/M-123-456">GitHub</a>
-                </PrimaryButton>
+                </SecondaryButton>
               </li>
               <li>
-                <PrimaryButton>
+                <SecondaryButton>
                   <a href="https://www.linkedin.com/in/miki-gerlach/">LinkedIn</a>
-                </PrimaryButton>
+                </SecondaryButton>
               </li>
             </ul>
 

@@ -18,6 +18,7 @@ module.exports = {
         chinaRose: "#A8577E",
         lavenderFloral: "#AA7DCE",
         redSalsa: "#F15156",
+        yellowGreen: "#396300",
       },
     },
   },

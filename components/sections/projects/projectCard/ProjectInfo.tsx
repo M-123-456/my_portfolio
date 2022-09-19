@@ -1,6 +1,7 @@
 import PrimaryButton from '../../../buttons/PrimaryButton';
 
 import { IProjectsData } from '../../../../types';
+import SecondaryButton from '../../../buttons/SecondaryButton';
 
 type Props = {
     project: IProjectsData;
@@ -12,23 +13,23 @@ const ProjectInfo: React.FC<Props> = ({ project }) => {
             className="w-[20rem] h-[20rem] bg-white flex flex-col justify-center gap-4  px-3 border-4 border-raisinBlack"
         >
             <h4
-                className="text-xl"
+                className="text-2xl text-redSalsa"
             >
                 {project.name}
             </h4>
             <h5
-                className="text-lg"
+                className="text-lg text-yellowGreen"
             >
                 {project.tech}
             </h5>
-            <PrimaryButton>
+            <SecondaryButton>
                 <a href={project.github}>Go to GitHub</a>
-            </PrimaryButton>
+            </SecondaryButton>
             {
                 project.website && 
-                <PrimaryButton>
+                <SecondaryButton>
                     <a href={project.website}>Visit Website</a>
-                </PrimaryButton>
+                </SecondaryButton>
             }
         </div>
   )

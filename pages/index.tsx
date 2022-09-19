@@ -13,7 +13,9 @@ import Footer from '../components/Footer';
 
 const Home: NextPage = () => {
 
+  const scrollY = useStore(state => state.scrollY)
   const setScrollY = useStore(state => state.setScrollY);
+  console.log(scrollY);
 
   useEffect(() => {
     window.addEventListener('scroll', setScrollY);
