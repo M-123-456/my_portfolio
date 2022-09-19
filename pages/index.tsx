@@ -56,8 +56,6 @@ const Home: NextPage = () => {
           <Projects />
           <Contact />
       </main>
-
-      <Footer />
     </div>
   )
 };

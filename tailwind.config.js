@@ -18,9 +18,6 @@ module.exports = {
         chinaRose: "#A8577E",
         lavenderFloral: "#AA7DCE"
       },
-      backgroundImage: {
-        "wave": "url('/wave.svg')",
-      },
     },
   },
 }

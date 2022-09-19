@@ -26,3 +26,11 @@ export interface IHomeData {
     name: string;
     jobTitle: string;
 }
+
+export interface IProjectsData {
+  name: string;
+  tech: string;
+  image: string;
+  github: string;
+  website: string;
+}
