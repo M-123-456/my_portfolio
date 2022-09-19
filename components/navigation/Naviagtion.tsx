@@ -1,15 +1,28 @@
+import { useState, useEffect, SetStateAction } from 'react';
 import { Disclosure } from '@headlessui/react'
+
+// Context
+import { useStore } from '../../store';
+
+// Constants
+import { NAVIGATION } from '../../data/constants';
+
 
 // Components
 import MenuButton from './mobile/MenuButton';
 import MobileLinks from './mobile/MobileLinks';
 import Links from './links/Links';
 
+// Types
+import { INavigation } from '../../types';
 
 const Naviagtion = () => {
 
+  const navigation = useStore(state => state.navigation);
+
+  
+
   return (
-    <header className="fixed w-screen z-30 flex justify-end">
       <Disclosure as="nav" className="">
         {({ open }) => (
           <>
@@ -21,7 +34,6 @@ const Naviagtion = () => {
 
                 {/* Links to each sections */}
                 <Links/>
-
               </div>
             </div>
             
@@ -30,7 +42,6 @@ const Naviagtion = () => {
           </>
         )}
       </Disclosure>
-    </header>
   )
 };
 

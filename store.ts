@@ -1,24 +1,50 @@
-import { Dispatch, SetStateAction } from 'react';
-
 import create from 'zustand';
 
-import { Inavigation } from './types';
+// Constants
+import { NAVIGATION } from './data/constants';
 
-const initialNav: Inavigation[] = [
-  { name: "Top", href: "#Top", current: false },
-  { name: "About", href: "#About", current: false },
-  { name: "Projects", href: "#Projects", current: false },
-  { name: "Contact", href: "#Contact", current: false },
+// Types
+import { INavigation } from './types';
+
+const initialNav: INavigation[] = [
+  { 
+    name: NAVIGATION.TOP.NAME, 
+    href: NAVIGATION.TOP.HREF, 
+    current: false 
+  },
+  { 
+    name: NAVIGATION.ABOUT.NAME, 
+    href: NAVIGATION.ABOUT.HREF, 
+    current: false 
+  },
+  { 
+    name: NAVIGATION.PROJECTS.NAME, 
+    href: NAVIGATION.PROJECTS.HREF, 
+    current: false 
+  },
+  { 
+    name: NAVIGATION.CONTACT.NAME, 
+    href: NAVIGATION.CONTACT.HREF, 
+    current: false 
+  },
 ]
 
 interface useStoreState {
-    navigation: Inavigation[];
-    updateNavCurrent: (name: string) => void;
+    scrollY: number;
+    setScrollY: () => void;
+    navigation: INavigation[];
+    setNavCurrent: (name: string) => void;
 }
 
 export const useStore = create<useStoreState>((set) => ({
+    scrollY: 0,
+    setScrollY: () => {
+        set((state) => ({
+            scrollY: window.scrollY
+        }))
+    },
     navigation: initialNav,
-    updateNavCurrent: (name) => {
+    setNavCurrent: (name) => {
         set((state) => {
             const _navigation = state.navigation.map(navItem => {
                 if (name === navItem.name) {

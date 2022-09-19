@@ -1,4 +1,3 @@
-import Image from 'next/image';
 
 import { AiOutlineCopyrightCircle } from 'react-icons/ai';
 
@@ -8,22 +7,15 @@ const Footer = (props: Props) => {
 
   return (
     <footer
-      className="bottom-0 fixed"
+      className="fixed bottom-2 left-2"
     >
-      <div className="relative">
-        <Image 
-        src='/wave.png'
-        width={1500}
-        height={900}
-        />
-        <div
-          area-label="copyright"
-          className="absolute bottom-5 left-3 text-white flex items-center gap-2"
-        >
-          <AiOutlineCopyrightCircle /> 2022 Miki Gerlach, All Rights Reserved.
-        </div>
+      <div
+        area-label="copyright"
+        className="text-white flex items-center gap-2"
+      >
+        <AiOutlineCopyrightCircle /> 2022 Miki Gerlach, All Rights Reserved.
       </div>
-      
+    
     </footer>
   )
 }

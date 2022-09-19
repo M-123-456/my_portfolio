@@ -1,8 +1,14 @@
 import { Disclosure } from '@headlessui/react';
 
+import { INavigation } from '../../../types';
+
 import { useStore } from '../../../store';
 
 import MobileSingleLink from './MobileSingleLink';
+
+// type Props = {
+//   navigation: INavigation[];
+// }
 
 const MobileLinks= () => {
 

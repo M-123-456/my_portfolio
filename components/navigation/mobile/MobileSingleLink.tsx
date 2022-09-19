@@ -1,10 +1,10 @@
 import { Disclosure } from '@headlessui/react';
 
 // Types
-import { Inavigation } from '../../../types';
+import { INavigation } from '../../../types';
 
 type Props = {
-    item: Inavigation;
+    item: INavigation;
 }
 
 const MobileSingleLink:React.FC<Props> = ({ item }) => {
@@ -14,7 +14,7 @@ const MobileSingleLink:React.FC<Props> = ({ item }) => {
             key={item.name}
             as="a"
             href={item.href}
-            className='text-darkBlue hover:bg-darkBlue hover:text-white block w-full px-6 py-2 rounded-md text-base font-medium'
+            className='border-b-4 border-transparent hover:border-raisinBlack block w-full px-6 py-2 text-base font-medium'
             aria-current={item.current ? 'page' : undefined}
           >
             {item.name}

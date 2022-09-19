@@ -1,6 +1,5 @@
 import React from 'react'
 import TopHero from './TopHero'
-import TopPicture from './TopPicture'
 
 type Props = {}
 
@@ -9,13 +8,12 @@ type Props = {}
 const Top = (props: Props) => {
   return (
     <section
-        className="min-h-screen flex items-center justify-center md:pt-28 md:items-start md:justify-evenly"
+        className="min-h-screen flex items-center justify-center bg-[linear-gradient(90deg,_#fdeb00_50%,_#d8d8d8_50%)]"
         id="Top"
     >
       <TopHero />
-      <TopPicture />
     </section>
   )
 }
 
-export default Top
+export default Top;

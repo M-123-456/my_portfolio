@@ -12,15 +12,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        accentYellow: "#E6E22D",
-        standardBlue: "#1D3DB4",
-        darkBlue: "#102FA3",
-        whiteGray: "#E0E1DF",
-        lightLavender: "#E5E9FE",
-
+        mainYellow: "#fdeb00",
+        raisinBlack: "#291F1E",
+        lightGray: "#d8d8d8",
+        chinaRose: "#A8577E",
+        lavenderFloral: "#AA7DCE"
       },
       backgroundImage: {
-        "wave": "url('/wave.png')",
+        "wave": "url('/wave.svg')",
       },
     },
   },

@@ -2,31 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
 html {
     scroll-behavior: smooth;
 }
 
-.custom-shape-divider-bottom-1663179265 {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.custom-shape-divider-bottom-1663179265 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 368px;
-    transform: rotateY(180deg);
-}
-
-/** For mobile devices **/
-@media (max-width: 767px) {
-    .custom-shape-divider-bottom-1663179265 svg {
-        width: calc(100% + 1.3px);
-        height: 125px;
-    }
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #291F1E;
 }

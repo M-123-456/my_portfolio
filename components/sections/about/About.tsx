@@ -1,4 +1,4 @@
-import React from 'react'
+import Image from 'next/image';
 
 type Props = {}
 
@@ -8,7 +8,7 @@ const About = (props: Props) => {
         className="h-screen pt-16 z-10 bg-lightLavender"
         id="About"
     >
-        About
+      About
     </section>
   )
 }
