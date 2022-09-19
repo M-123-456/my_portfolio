@@ -8,7 +8,6 @@ export const projects: IProjectsData[] = [
         tech: "Next.js | TypeScript | tailwind",
         image: '/portfolio.png',
         github: "https://github.com/M-123-456/my_portfolio",
-        website: ""
     },
     {
         name: "Calculator",

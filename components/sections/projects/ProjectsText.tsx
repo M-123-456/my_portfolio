@@ -1,5 +1,3 @@
-import React from 'react'
-
 type Props = {}
 
 const ProjectsText = (props: Props) => {
@@ -17,7 +15,7 @@ const ProjectsText = (props: Props) => {
             </span>
         </h3>
         <p
-            className="my-6"
+            className="my-6 pr-4"
         >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, molestiae delectus! Amet, tempore unde. Voluptate maiores adipisci provident dolores iusto molestias eum ea, voluptatibus, omnis quia veniam corporis reprehenderit quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, reprehenderit dolores. Fuga doloribus porro repudiandae eligendi cum iusto sit quidem, neque quos commodi vel facilis perspiciatis dolorum ut! Quibusdam, accusamus!
         </p>

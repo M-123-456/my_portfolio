@@ -32,5 +32,5 @@ export interface IProjectsData {
   tech: string;
   image: string;
   github: string;
-  website: string;
+  website?: string;
 }

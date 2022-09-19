@@ -16,7 +16,8 @@ module.exports = {
         raisinBlack: "#291F1E",
         lightGray: "#d8d8d8",
         chinaRose: "#A8577E",
-        lavenderFloral: "#AA7DCE"
+        lavenderFloral: "#AA7DCE",
+        redSalsa: "#F15156",
       },
     },
   },
