@@ -10,16 +10,16 @@ const TopHero = () => {
         area-label="hero"
         className="flex flex-col"
     >
-        <h1
+        <div
             className="text-2xl leading-[4rem] md:leading-[6rem] md:text-4xl "
         >
             {homeData.greeting}<br/>
-            <span
-                className="text-4xl md:text-8xl"
+            <h1
+                className="text-6xl md:text-[10rem] lg:text-[15rem] tracking-tighter"
             >
                 {homeData.name}
-            </span>
-        </h1>
+            </h1>
+        </div>
         <h2
             className="mt-4 text-2xl md:text-3xl md:self-end md:border-b-2 border-black"
         >

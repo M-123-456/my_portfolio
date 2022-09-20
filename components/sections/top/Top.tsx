@@ -8,7 +8,7 @@ type Props = {}
 const Top = (props: Props) => {
   return (
     <section
-        className="min-h-screen flex items-center justify-center bg-[linear-gradient(90deg,_#fdeb00_50%,_#d8d8d8_50%)]"
+        className="min-h-screen flex items-center justify-center bg-[linear-gradient(180deg,_#fdeb00_50%,_#d8d8d8_50%)] md:bg-[linear-gradient(90deg,_#fdeb00_50%,_#d8d8d8_50%)]"
         id="Top"
     >
       <TopHero />

@@ -29,7 +29,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                 project={project}
             /> :
             <div
-                className="border-raisinBlack border-4 w-[20rem] h-[20rem]"
+                className="border-raisinBlack border-2 w-[20rem] h-[20rem]"
             >
                 <Image 
                     src={project.image}

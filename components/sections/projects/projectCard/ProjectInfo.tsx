@@ -10,15 +10,15 @@ type Props = {
 const ProjectInfo: React.FC<Props> = ({ project }) => {
   return (
     <div
-            className="w-[20rem] h-[20rem] bg-white flex flex-col justify-center gap-4  px-3 border-4 border-raisinBlack"
+            className="w-[20rem] h-[20rem] bg-lightGray flex flex-col justify-center gap-4  px-3 border-2 border-raisinBlack"
         >
             <h4
-                className="text-2xl text-redSalsa"
+                className="text-2xl text-raisinBlack"
             >
                 {project.name}
             </h4>
             <h5
-                className="text-lg text-yellowGreen"
+                className="text-lg text-raisinBlack"
             >
                 {project.tech}
             </h5>

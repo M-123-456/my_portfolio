@@ -8,7 +8,7 @@ type Props = {}
 const Contact = (props: Props) => {
   return (
     <section
-        className="min-h-screen px-4 pt-16 md:pt-32 flex justify-center relative bg-redSalsa bg-[linear-gradient(160deg,_#F15156_40%,_#d8d8d8_40%)]"
+        className="min-h-screen px-4 pt-16 md:pt-32 flex justify-center relative bg-[linear-gradient(160deg,_#fff_50%,_#fdeb00_50%)]"
         id="Contact"
     >
       <div

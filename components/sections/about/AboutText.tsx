@@ -1,5 +1,6 @@
 import React from 'react'
 import PrimaryButton from '../../buttons/PrimaryButton'
+import SecondaryButton from '../../buttons/SecondaryButton'
 
 const AboutText = () => {
   return (
@@ -18,18 +19,13 @@ const AboutText = () => {
         >
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, molestiae delectus! Amet, tempore unde. Voluptate maiores adipisci provident dolores iusto molestias eum ea, voluptatibus, omnis quia veniam corporis reprehenderit quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, reprehenderit dolores. Fuga doloribus porro repudiandae eligendi cum iusto sit quidem, neque quos commodi vel facilis perspiciatis dolorum ut! Quibusdam, accusamus!
         </p>
-        <div
-            className="pl-4"
+        <SecondaryButton
+            // className="pl-4"
         >
-            {/* <span
-                className=" border-l-4 border-raisinBlack py-2 px-2 hover:border-b-4 transition hover:ease-in hover:duration-300"
-            >
-                Download CV
-            </span> */}
-            <PrimaryButton>
-                Download CV
-            </PrimaryButton>
-        </div>
+                <a href="/cv.pdf" download>
+                    Download CV
+                </a>
+        </SecondaryButton>
     </div>
   )
 }
