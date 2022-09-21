@@ -3,6 +3,7 @@ import { homeData } from '../../../data/homeData';
 
 
 
+// todo text size 
 
 const TopHero = () => {
   return (

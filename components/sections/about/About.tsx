@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import AboutPicture from './AboutPicture';
 import AboutText from './AboutText';
 
 type Props = {}
@@ -6,10 +7,11 @@ type Props = {}
 const About = (props: Props) => {
   return (
     <section
-        className="min-h-screen pt-16 md:pt-32"
+        className="min-h-screen flex flex-col-reverse md:flex-row pt-16 md:pt-32 bg-lightGray"
         id="About"
     >
-     <AboutText /> 
+      <AboutPicture />
+      <AboutText /> 
     </section>
   )
 }

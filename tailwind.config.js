@@ -15,6 +15,7 @@ module.exports = {
         mainYellow: "#fdeb00",
         raisinBlack: "#291F1E",
         lightGray: "#d8d8d8",
+        lighterGray: "#edebeb",
         chinaRose: "#A8577E",
         lavenderFloral: "#AA7DCE",
         redSalsa: "#F15156",
