@@ -1,14 +1,14 @@
 import React from 'react'
-import PrimaryButton from '../../buttons/PrimaryButton'
-import SecondaryButton from '../../buttons/SecondaryButton'
 import Footer from '../../Footer'
+import Email from './Email'
+import Socials from './Socials'
 
 type Props = {}
 
 const Contact = (props: Props) => {
   return (
     <section
-        className="min-h-screen px-4 pt-16 md:pt-32 flex justify-center relative bg-[linear-gradient(160deg,_#fff_50%,_#fdeb00_50%)]"
+        className="min-h-screen px-4 items-center flex justify-center relative bg-[linear-gradient(160deg,_#fff_50%,_#fdeb00_50%)]"
         id="Contact"
     >
       <div
@@ -23,49 +23,11 @@ const Contact = (props: Props) => {
         <div
             className="my-6 flex flex-col gap-10"
         >
-          <div>
-            <p
-              className="text-xl font-bold text-center md:text-4xl"
-            >
-              Send me a message
-            </p>
-            <p
-              className="mt-4 text-lg text-center md:text-3xl"
-            >
-              mikigerlach2@gmail.com
-            </p>
-          </div>
-
-          <div>
-            <p
-              className="text-xl font-bold text-center md:text-4xl"
-            >
-              Or connect with me on socials
-            </p>
-            <ul
-              className="mt-4 flex justify-center gap-6"
-            >
-              <li>
-                <SecondaryButton>
-                  <a href="https://github.com/M-123-456">GitHub</a>
-                </SecondaryButton>
-              </li>
-              <li>
-                <SecondaryButton>
-                  <a href="https://www.linkedin.com/in/miki-gerlach/">LinkedIn</a>
-                </SecondaryButton>
-              </li>
-            </ul>
-
-          </div>
-
-            
-            
-              
+          <Email />
+          <Socials />
         </div>
-    </div>
 
-       
+    </div>
       <Footer />
     </section>
   )

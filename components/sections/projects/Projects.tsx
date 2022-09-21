@@ -8,7 +8,7 @@ import ProjectsText from './ProjectsText'
 const Projects = () => {
   return (
     <section
-        className="min-h-screen pt-16 pb-6 pl-4 md:pt-32"
+        className="min-h-screen pt-16 pb-6 md:pt-32 "
         id="Projects"
     >
       <ProjectsText />

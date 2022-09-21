@@ -9,27 +9,25 @@ const TopHero = () => {
   return (
     <div
         area-label="hero"
-        className="flex flex-col"
     >
         <div
-            className="text-2xl leading-[4rem] md:leading-[6rem] md:text-4xl "
+            className="flex flex-col text-2xl md:text-4xl leading-[4rem] md:leading-[8rem] lg:leading-[10rem]"
         >
-            {homeData.greeting}<br/>
+            <p
+                className="pl-1 md:pl-4 lg:pl-5"
+            >
+                {homeData.greeting}
+            </p>
             <h1
-                className="text-6xl md:text-[10rem] lg:text-[15rem] tracking-tighter"
+                className="text-[3.5rem] md:text-[9rem] lg:text-[12rem] tracking-tighter"
             >
                 {homeData.name}
             </h1>
-        </div>
-        <h2
-            className="mt-4 text-2xl md:text-3xl md:self-end md:border-b-2 border-black"
-        >
-            {homeData.jobTitle}
-        </h2>
-        <div
-            className="mt-6 flex flex-col md:flex-row gap-3 md:mt-16"
-            area-label="buttons"
-        >
+            <h2
+                className="pl-1 mt-4 text-2xl md:text-3xl md:self-end md:border-b-2 border-black"
+            >
+                {homeData.jobTitle}
+            </h2>
         </div>
     </div>
   )
