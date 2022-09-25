@@ -1,4 +1,5 @@
 import SecondaryButton from '../../buttons/SecondaryButton'
+import { authorData } from '../../../data/authorData';
 
 type Props = {}
 
@@ -15,12 +16,12 @@ const Socials = (props: Props) => {
         >
             <li>
             <SecondaryButton>
-                <a href="https://github.com/M-123-456">GitHub</a>
+                <a href={authorData.github}>GitHub</a>
             </SecondaryButton>
             </li>
             <li>
             <SecondaryButton>
-                <a href="https://www.linkedin.com/in/miki-gerlach/">LinkedIn</a>
+                <a href={authorData.linkedIn}>LinkedIn</a>
             </SecondaryButton>
             </li>
         </ul>

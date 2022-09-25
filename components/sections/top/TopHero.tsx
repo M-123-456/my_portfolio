@@ -1,4 +1,4 @@
-import { homeData } from '../../../data/homeData';
+import { authorData } from '../../../data/authorData';
 
 
 
@@ -16,17 +16,17 @@ const TopHero = () => {
             <p
                 className="pl-1 md:pl-4 lg:pl-5"
             >
-                {homeData.greeting}
+                {authorData.greeting}
             </p>
             <h1
                 className="text-[3.5rem] md:text-[9rem] lg:text-[12rem] tracking-tighter"
             >
-                {homeData.name}
+                {authorData.name}
             </h1>
             <h2
                 className="pl-1 mt-4 text-2xl md:text-3xl md:self-end md:border-b-2 border-black"
             >
-                {homeData.jobTitle}
+                {authorData.jobTitle}
             </h2>
         </div>
     </div>

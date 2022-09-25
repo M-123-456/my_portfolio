@@ -1,8 +1,13 @@
-import React from 'react'
+import { authorData } from '../../../data/authorData';
 
 type Props = {}
 
 const Email = (props: Props) => {
+
+    const copyToClipboard = (email:string) => {
+        navigator.clipboard.writeText(email)
+    }
+
   return (
     <div>
         <p
@@ -14,9 +19,10 @@ const Email = (props: Props) => {
         {/* todo */}
         {/* hover and change pointer design und copy onclick */}
         <p
-            className="mt-4 text-lg text-center md:text-3xl"
+            className="mt-4 text-lg text-center hover: md:text-3xl"
+            onClick={() => copyToClipboard(authorData.email)}
         >
-            mikigerlach2@gmail.com
+            {authorData.email}
         </p>
     </div>
   )

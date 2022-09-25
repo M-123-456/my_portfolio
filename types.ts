@@ -21,10 +21,13 @@ export interface INavConstantsDetails {
   CONTACT: INavConstantsSingleItem;
 }
 
-export interface IHomeData {
+export interface IAuthorData {
     greeting: string;
     name: string;
     jobTitle: string;
+    email: string;
+    github: string;
+    linkedIn: string;
 }
 
 export interface IProjectsData {

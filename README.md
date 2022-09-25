@@ -44,7 +44,7 @@ Visit my website:
 #### 7. Deploy
 
 // todo
-nav: underline animation
 top: parallax and background animation
 about & projects & contact animation scroll and appear from bottom
-contact: email click and copy
+contact: email click and copy, mouse
+project: screenshot
