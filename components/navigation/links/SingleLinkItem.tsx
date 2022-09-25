@@ -59,11 +59,10 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
       >
       <motion.div
         className={classNames(
-          item.current ? 'after:scale-100' : 'after:hover:scale-100',
-          'px-3 py-2 font-large relative inline-block after:content-[""] after:absolute after:w-full after:h-1 after:bg-raisinBlack after:bottom-0 after:left-0 after:origin-top-left after:scale-0 after:transition ease-in duration-1000'
+          item.current ? 'after:scale-x-100' : 'after:hover:scale-x-100 after:hover:transition after:hover:ease-in after:hover:duration-300',
+          'px-3 py-2 font-large relative inline-block after:content-[""] after:absolute after:w-full after:h-1 after:bg-raisinBlack after:bottom-0 after:left-0 after:origin-top-left after:scale-x-0 after:scale-y-100'
         )}
         aria-current={item.current ? 'page' : undefined}
-        
       >
         {item.name}
       </motion.div>
