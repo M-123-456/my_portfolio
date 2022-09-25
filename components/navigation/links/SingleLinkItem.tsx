@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import { useEffect, Dispatch, SetStateAction } from 'react';
+import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
 // Context
 import { useStore } from '../../../store';
@@ -14,6 +15,8 @@ import { classNames } from '../../../utils/classNames';
 // Types
 import { INavigation } from '../../../types';
 
+// Animation Variants
+import { navVariants } from '../../../data/variants';
 
 type Props = {
     item: INavigation;
@@ -54,15 +57,16 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
     <Link
         href={item.href}
       >
-      <div
+      <motion.div
         className={classNames(
-          item.current ? 'border-b-4 ' : 'hover:border-b-4 hover: border-dotted',
-          'px-3 py-2 text-md font-large border-raisinBlack'
+          item.current ? 'after:scale-100' : 'after:hover:scale-100',
+          'px-3 py-2 font-large relative inline-block after:content-[""] after:absolute after:w-full after:h-1 after:bg-raisinBlack after:bottom-0 after:left-0 after:origin-top-left after:scale-0 after:transition ease-in duration-1000'
         )}
         aria-current={item.current ? 'page' : undefined}
+        
       >
         {item.name}
-      </div>
+      </motion.div>
     </Link>
   )
 }

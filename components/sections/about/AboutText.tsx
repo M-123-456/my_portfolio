@@ -23,7 +23,7 @@ const AboutText = () => {
             className="flex justify-end pr-8 md:pt-10"
         >
             <SecondaryButton>
-                <a href="/cv.pdf" download>
+                <a href="/mikigerlach_cv_en.pdf" download>
                     Download CV
                 </a>
             </SecondaryButton>

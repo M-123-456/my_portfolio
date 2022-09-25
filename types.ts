@@ -34,3 +34,16 @@ export interface IProjectsData {
   github: string;
   website?: string;
 }
+
+// animation variants
+export interface INavVariants {
+    hidden: {
+        width: number 
+    },
+    visible:{
+        width: string
+    },
+    transition: {
+        ease: string
+    }
+}

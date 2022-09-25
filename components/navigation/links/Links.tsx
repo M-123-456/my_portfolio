@@ -19,6 +19,7 @@ import SingleLinkItem from './SingleLinkItem';
 const Links= () => {
 
     const navigation = useStore(state => state.navigation);
+    console.log(navigation)
 
   return (
     <div className="mr-3 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
