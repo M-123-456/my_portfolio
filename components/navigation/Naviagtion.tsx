@@ -1,12 +1,12 @@
-import { useState, useEffect, SetStateAction } from 'react';
 import { Disclosure } from '@headlessui/react'
+import { motion } from 'framer-motion';
 
 // Context
 import { useStore } from '../../store';
 
-// Constants
+// Data
 import { NAVIGATION } from '../../data/constants';
-
+import { containerVariants } from '../../data/animationVariants';
 
 // Components
 import MenuButton from './mobile/MenuButton';
@@ -23,7 +23,7 @@ const Naviagtion = () => {
   
 
   return (
-      <Disclosure as="nav" className="">
+      <Disclosure as="nav" >
         {({ open }) => (
           <>
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

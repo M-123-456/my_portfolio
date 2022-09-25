@@ -1,11 +1,16 @@
-import React from 'react'
-import PrimaryButton from '../../buttons/PrimaryButton'
-import SecondaryButton from '../../buttons/SecondaryButton'
+import { motion } from 'framer-motion';
+
+import { containerVariants } from '../../../data/animationVariants';
+
+// Components
+import SecondaryButton from '../../buttons/SecondaryButton';
 
 const AboutText = () => {
   return (
-    <div
+    <motion.div
         className="md:w-1/2"
+        initial={containerVariants.hidden}
+        whileInView={containerVariants.visible}
     >
         <h3
             className="mr-4 md:mr-0 text-3xl font-bold border-b-4 border-raisinBlack md:text-6xl"
@@ -28,7 +33,7 @@ const AboutText = () => {
                 </a>
             </SecondaryButton>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

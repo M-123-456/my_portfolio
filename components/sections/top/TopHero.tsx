@@ -1,14 +1,17 @@
+import { motion } from 'framer-motion';
+
+// Data
 import { authorData } from '../../../data/authorData';
+import { containerVariants } from '../../../data/animationVariants';
 
 
-
-
-// todo text size 
 
 const TopHero = () => {
   return (
-    <div
+    <motion.div
         area-label="hero"
+        initial={containerVariants.hidden}
+        whileInView={containerVariants.visible}
     >
         <div
             className="flex flex-col text-2xl md:text-4xl leading-[4rem] md:leading-[8rem] lg:leading-[10rem]"
@@ -29,7 +32,7 @@ const TopHero = () => {
                 {authorData.jobTitle}
             </h2>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 // Types
 import { IProjectsData } from '../../../../types';
+
+// Data
+import { containerVariants } from '../../../../data/animationVariants';
 
 // Components
 import ProjectInfo from './ProjectInfo';
@@ -17,10 +21,13 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
 
 
   return (
-    <div
+    <motion.div
         area-label="project_card"
         onMouseEnter={() => setInfoShown(true)}
         onMouseLeave={() => setInfoShown(false)}
+        initial={containerVariants.hidden}
+        whileInView={containerVariants.visible}
+
     >
         {/* If pictures are hovered, info of the project will be shown */}
         {
@@ -44,7 +51,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         
        
         
-    </div>
+    </motion.div>
   )
 }
 

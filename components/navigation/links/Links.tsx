@@ -1,11 +1,11 @@
-import { Dispatch, SetStateAction } from 'react';
+import { motion } from 'framer-motion';
 
-
-// Context
+// Data
 import { useStore } from '../../../store';
+import { containerVariants } from '../../../data/animationVariants';
 
 // Types
-import { INavigation } from '../../../types';
+// import { INavigation } from '../../../types';
 
 // Components
 import SingleLinkItem from './SingleLinkItem';
@@ -19,10 +19,13 @@ import SingleLinkItem from './SingleLinkItem';
 const Links= () => {
 
     const navigation = useStore(state => state.navigation);
-    console.log(navigation)
 
   return (
-    <div className="mr-3 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+    <motion.div 
+        className="mr-3 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+        initial={containerVariants.hidden}
+        whileInView={containerVariants.visible}
+    >
         <div className="hidden sm:ml-6 sm:block">
             <div className="flex space-x-4">
                 {navigation.map((item) => (
@@ -33,7 +36,7 @@ const Links= () => {
                 ))}
             </div>
         </div>
-    </div>
+    </motion.div>
   )
 }
 

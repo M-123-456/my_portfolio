@@ -1,15 +1,18 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { containerVariants } from '../../../data/animationVariants';
 
 type Props = {}
-
 
 const AboutPicture = (props: Props) => {
   return (
     <div
       className="mt-16 md:w-1/2 md:self-end md:justify-self-end"
     >
-      <div
+      <motion.div
         className="image-container"
+        initial={containerVariants.hidden}
+        whileInView={containerVariants.visible}
       >
         <Image 
             className="image"
@@ -20,7 +23,7 @@ const AboutPicture = (props: Props) => {
             // layout='fill'
             // objectFit="cover"
         />
-      </div>
+      </motion.div>
     </div>
   )
 }
