@@ -13,7 +13,7 @@ import { NAVIGATION } from '../../../data/constants';
 import { classNames } from '../../../utils/classNames';
 
 // Types
-import { INavigation, IYOfSections } from '../../../types';
+import { INavigation } from '../../../types';
 
 
 type Props = {
@@ -26,7 +26,6 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
 
   const setNavCurrent = useStore(state => state.setNavCurrent);
   const scrollY = useStore(state => state.scrollY);
-  const navigation = useStore(state => state.navigation);
   const yPages = useStore(state => state.yOfSections);
 
 
@@ -35,6 +34,7 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
     if (router?.asPath === `/#${item.name}`) {
       setNavCurrent(item.name)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [router]);
 
   // Set current in navigation depending on scrolling position
@@ -50,32 +50,13 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
       current = NAVIGATION.CONTACT.NAME
     }
     setNavCurrent(current);
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [scrollY]);
-
-  const onClickScrollToPage = (yPages: IYOfSections, item: INavigation) => {
-    switch(item.name) {
-      case NAVIGATION.HERO.NAME:
-        document.documentElement.scrollTop = yPages.hero.start;
-        break;
-      case NAVIGATION.ABOUT.NAME:
-        document.documentElement.scrollTop = yPages.about.start;
-        break;
-      case NAVIGATION.PROJECTS.NAME:
-        document.documentElement.scrollTop = yPages.projects.start;
-        break;
-      case NAVIGATION.CONTACT.NAME:
-        document.documentElement.scrollTop = yPages.contact.start;
-        break;
-      default:
-        return;
-    }
-  }
 
   return (
     <Link
         href={item.href}
-        // onClick={() => onClickScrollToPage(yPages, item)}
-      >
+    >
       <motion.a
         className={classNames(
           item.current ? 'after:scale-x-100' : 'after:scale-x-0 after:hover:scale-x-100 after:hover:transition after:hover:ease-in after:hover:duration-300',

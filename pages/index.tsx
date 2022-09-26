@@ -26,6 +26,7 @@ const Home: NextPage = () => {
     window.addEventListener('scroll', setScrollY);
     
     console.log(scrollY);
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [scrollY])
 
   
