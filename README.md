@@ -44,6 +44,7 @@ Visit my website:
 #### 7. Deploy
 
 // todo
-top: parallax and background animation
 contact: email click and copy, mouse
 project: screenshot
+id fix
+image

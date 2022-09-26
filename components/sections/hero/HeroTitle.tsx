@@ -6,7 +6,7 @@ import { containerVariants } from '../../../data/animationVariants';
 
 
 
-const TopHero = () => {
+const HeroTitle = () => {
   return (
     <motion.div
         area-label="hero"
@@ -36,4 +36,4 @@ const TopHero = () => {
   )
 }
 
-export default TopHero
+export default HeroTitle

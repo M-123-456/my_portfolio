@@ -8,20 +8,13 @@ import ProjectCard from './projectCard/ProjectCard';
 // Components
 import ProjectsText from './ProjectsText'
 
-type Props = {
-  speed: number;
-}
 
-const Projects: React.FC<Props> = ({ speed }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100]);
+const Projects = () => {
 
   return (
     <motion.section
         className="min-h-screen pt-16 pb-6 md:pt-32 "
         id="Projects"
-        style={{y:y}}
     >
       <ProjectsText />
       <div

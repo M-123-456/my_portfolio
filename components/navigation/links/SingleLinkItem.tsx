@@ -13,7 +13,7 @@ import { NAVIGATION } from '../../../data/constants';
 import { classNames } from '../../../utils/classNames';
 
 // Types
-import { INavigation } from '../../../types';
+import { INavigation, IYOfSections } from '../../../types';
 
 
 type Props = {
@@ -23,38 +23,58 @@ type Props = {
 const SingleLinkItem: React.FC<Props> = ({ item }) => {
   
   const router = useRouter();
-  console.log(item.current)
 
-  const setNavCurrent = useStore(state => state.setNavCurrent)
+  const setNavCurrent = useStore(state => state.setNavCurrent);
   const scrollY = useStore(state => state.scrollY);
-  const yPages = useStore(state => state.yOfPages);
+  const navigation = useStore(state => state.navigation);
+  const yPages = useStore(state => state.yOfSections);
 
-  
+
   // Everytime a section is selected, set current in navigation true. If not selected, set it to false. This state is used for the style to show the current section user is watching.
   useEffect(() => {
     if (router?.asPath === `/#${item.name}`) {
       setNavCurrent(item.name)
     }
-  }, [router])
+  }, [router]);
 
   // Set current in navigation depending on scrolling position
   useEffect(() => {
     let current = "";
-    if(scrollY >= yPages.TOP.start && scrollY < yPages.TOP.end) {
-      current = NAVIGATION.TOP.NAME
-    } else if (scrollY >= yPages.ABOUT.start && scrollY < yPages.ABOUT.end) {
+    if(scrollY >= yPages.hero.start && scrollY < yPages.hero.end) {
+      current = NAVIGATION.HERO.NAME
+    } else if (scrollY >= yPages.about.start && scrollY < yPages.about.end) {
       current = NAVIGATION.ABOUT.NAME
-    } else if (scrollY >= yPages.PROJECTS.start && scrollY < yPages.PROJECTS.end) {
+    } else if (scrollY >= yPages.projects.start && scrollY < yPages.projects.end) {
       current = NAVIGATION.PROJECTS.NAME
-    } else if (scrollY >= yPages.CONTACT.start) {
+    } else if (scrollY >= yPages.contact.start) {
       current = NAVIGATION.CONTACT.NAME
     }
     setNavCurrent(current);
   }, [scrollY]);
 
+  const onClickScrollToPage = (yPages: IYOfSections, item: INavigation) => {
+    switch(item.name) {
+      case NAVIGATION.HERO.NAME:
+        document.documentElement.scrollTop = yPages.hero.start;
+        break;
+      case NAVIGATION.ABOUT.NAME:
+        document.documentElement.scrollTop = yPages.about.start;
+        break;
+      case NAVIGATION.PROJECTS.NAME:
+        document.documentElement.scrollTop = yPages.projects.start;
+        break;
+      case NAVIGATION.CONTACT.NAME:
+        document.documentElement.scrollTop = yPages.contact.start;
+        break;
+      default:
+        return;
+    }
+  }
+
   return (
     <Link
         href={item.href}
+        // onClick={() => onClickScrollToPage(yPages, item)}
       >
       <motion.a
         className={classNames(
@@ -63,7 +83,7 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
         )}
         aria-current={item.current ? 'page' : undefined}
       >
-        {item.name}
+        {item.name.toUpperCase()}
       </motion.a>
     </Link>
   )

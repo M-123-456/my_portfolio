@@ -1,8 +1,9 @@
 import { INavConstantsDetails } from '../types';
 
 export const NAVIGATION: INavConstantsDetails = {
-  TOP: { NAME: 'Top', HREF: "#Top" },
-  ABOUT: { NAME: 'About', HREF: "#About" },
-  PROJECTS: { NAME: 'Projects', HREF: "#Projects" }, 
-  CONTACT: { NAME: 'Contact', HREF: "#Contact" },
+  //! Hero Name "Top" for navigation
+  HERO: { NAME: 'Top', HREF: "#Hero" },
+  ABOUT: { NAME: 'about', HREF: "#About" },
+  PROJECTS: { NAME: 'projects', HREF: "#Projects" }, 
+  CONTACT: { NAME: 'contact', HREF: "#Contact" },
 }

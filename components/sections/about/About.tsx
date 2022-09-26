@@ -1,22 +1,16 @@
-import { useRef } from 'react';
-import AboutPicture from './AboutPicture';
+import { motion } from 'framer-motion';
+import { useParallax } from 'react-scroll-parallax';
+
+// Components
 import AboutText from './AboutText';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import AboutPicture from './AboutPicture';
 
-type Props = {
-  speed: number;
-}
-
-const About: React.FC<Props> = ({ speed }) => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({ target: ref });
-  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100]);
+const About = () => {
 
   return (
     <motion.section
         className="min-h-screen flex flex-col-reverse md:flex-row pt-16 md:pt-32 bg-lightGray relative"
         id="About"
-        style={{y:y}}
     >
       <AboutPicture />
       <AboutText />
@@ -25,7 +19,6 @@ const About: React.FC<Props> = ({ speed }) => {
       >
       </div>
     </motion.section>
-      
   )
 }
 

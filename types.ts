@@ -13,7 +13,7 @@ export interface INavConstantsSingleItem {
 
 // todo optimize 
 export interface INavConstantsDetails {
-  TOP: INavConstantsSingleItem;
+  HERO: INavConstantsSingleItem;
   ABOUT: INavConstantsSingleItem;
   PROJECTS: INavConstantsSingleItem;
   CONTACT: INavConstantsSingleItem;
@@ -36,9 +36,13 @@ export interface IProjectsData {
   website?: string;
 }
 
-export interface IYPages {
-  TOP: { start: number, end: number},
-  ABOUT: {start: number, end: number},
-  PROJECTS: {start: number, end: number},
-  CONTACT: {start: number, end: number},
+interface IYSingleSection {
+  start: number, end: number
+}
+
+export interface IYOfSections {
+  hero: IYSingleSection;
+  about: IYSingleSection;
+  projects: IYSingleSection;
+  contact: IYSingleSection;
 }

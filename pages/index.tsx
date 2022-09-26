@@ -1,53 +1,68 @@
 import { useEffect } from 'react';
+
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+import { Parallax } from 'react-scroll-parallax';
 
 import { useStore } from '../store';
 
 import About from '../components/sections/about/About';
 import Contact from '../components/sections/contact/Contact';
-import Top from '../components/sections/top/Top';
+import Hero from '../components/sections/hero/Hero';
 import Projects from '../components/sections/projects/Projects';
 import Navigation from '../components/navigation/Naviagtion';
 
 
 
 const Home: NextPage = () => {
+  
 
   const scrollY = useStore(state => state.scrollY);
   const setScrollY = useStore(state => state.setScrollY);
-  const navigation = useStore(state => state.navigation);
-  const setYOfPage = useStore(state => state.setYOfPage);
-  const yOfPages = useStore(state => state.yOfPages);
-
-  console.log(scrollY);
-  console.log(yOfPages);
-
+  const setYOfSection = useStore(state => state.setYOfSection);
 
   useEffect(() => {
     window.addEventListener('scroll', setScrollY);
+    
+    console.log(scrollY);
   }, [scrollY])
 
   
   useEffect(() => {
-    navigation.forEach(item => {
-      const page = document.querySelector(item.href);
-      const start = page?.getBoundingClientRect().top;
-      const end = page?.getBoundingClientRect().bottom;
-      console.log('top', start, 'bottom', end);
-      setYOfPage(item.name.toUpperCase(), start, end)
-    })
-  }, [scrollY])
 
+    // set position of all sections. Wherever the scrollY position is, hero start should be set to 0
+
+    // Hero
+    const hero = document.querySelector("#Hero");
+    const heroEnd = hero!.getBoundingClientRect().height;
+    setYOfSection("top", 0, heroEnd)
+
+    // About
+    const about = document.querySelector("#About");
+    const aboutEnd = heroEnd + about!.getBoundingClientRect().height;
+    setYOfSection("about", heroEnd, aboutEnd);
+  
+    // Projects
+    const projects = document.querySelector("#Projects");
+    const projectsEnd = aboutEnd + projects!.getBoundingClientRect().height;
+    setYOfSection("projects", aboutEnd, projectsEnd);
+
+    // Contact
+    const contact = document.querySelector("#Contact");
+    const contactEnd = projectsEnd + contact!.getBoundingClientRect().height;
+    setYOfSection("contact", projectsEnd, contactEnd);
+
+  }, []);
+
+  
 
   return (
     <div
       className="text-raisinBlack"
     >
       <Head>
-        <title>Create Next App</title>
+        <title>Portfolio: Miki Gerlach</title>
         <meta name="portfolio_website" content="Portfolio website of Miki Gerlach" />
         <link rel="icon" href="/favicon.ico" />
 
@@ -63,17 +78,17 @@ const Home: NextPage = () => {
         />
       </Head>
 
+      <div id="Cursor"></div>
+
       <header className="fixed w-screen z-30 flex justify-end">
         <Navigation />
       </header>
 
-      <main
-        style={{height: yOfPages.CONTACT.end}}
-      >
-        <Top speed={4} />
-        <About speed={-10} />
-        <Projects speed={-10} />
-        <Contact speed={-10} />
+      <main>
+        <Hero  />
+        <About />
+        <Projects />
+        <Contact  />
       </main>
     </div>
   )
