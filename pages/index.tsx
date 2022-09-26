@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
+import { motion, useScroll, useTransform, MotionValue } from 'framer-motion';
+
 import { useStore } from '../store';
 
 import About from '../components/sections/about/About';
@@ -9,13 +11,18 @@ import Contact from '../components/sections/contact/Contact';
 import Top from '../components/sections/top/Top';
 import Projects from '../components/sections/projects/Projects';
 import Navigation from '../components/navigation/Naviagtion';
-import Footer from '../components/Footer';
+
+
 
 const Home: NextPage = () => {
 
   const scrollY = useStore(state => state.scrollY)
   const setScrollY = useStore(state => state.setScrollY);
   console.log(scrollY);
+
+  function useParallax(value: MotionValue<number>, distance: number) {
+    return useTransform(value, [0,1], [-distance, distance]);
+  }
 
   useEffect(() => {
     window.addEventListener('scroll', setScrollY);
@@ -47,16 +54,10 @@ const Home: NextPage = () => {
       </header>
 
       <main>
-        {/* <Image 
-          className="h-screen bg-fixed bg-center"
-          src='/wave.svg'
-          layout={`fill`}
-          objectFit={`cover`}
-        /> */}
-          <Top />
-          <About />
-          <Projects />
-          <Contact />
+        <Top speed={4} />
+        <About speed={-10} />
+        <Projects speed={-10} />
+        <Contact speed={-10} />
       </main>
     </div>
   )

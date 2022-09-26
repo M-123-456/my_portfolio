@@ -19,6 +19,7 @@ import { INavigation } from '../../types';
 const Naviagtion = () => {
 
   const navigation = useStore(state => state.navigation);
+  console.log(navigation)
 
   
 

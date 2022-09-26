@@ -1,3 +1,6 @@
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+
 // Data
 import { projects } from '../../../data/projectsData';
 import ProjectCard from './projectCard/ProjectCard';
@@ -5,11 +8,20 @@ import ProjectCard from './projectCard/ProjectCard';
 // Components
 import ProjectsText from './ProjectsText'
 
-const Projects = () => {
+type Props = {
+  speed: number;
+}
+
+const Projects: React.FC<Props> = ({ speed }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100]);
+
   return (
-    <section
+    <motion.section
         className="min-h-screen pt-16 pb-6 md:pt-32 "
         id="Projects"
+        style={{y:y}}
     >
       <ProjectsText />
       <div
@@ -24,7 +36,7 @@ const Projects = () => {
           ))
         }
       </div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Data
 import { containerVariants } from '../../../data/animationVariants';
@@ -8,13 +9,20 @@ import Footer from '../../Footer'
 import Email from './Email'
 import Socials from './Socials'
 
-type Props = {}
+type Props = {
+  speed: number;
+}
 
-const Contact = (props: Props) => {
+const Contact: React.FC<Props> = ({ speed }) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({ target: ref });
+  const y = useTransform(scrollYProgress, [0, 1], [0, speed * 100]);
+
   return (
-    <section
+    <motion.section
         className="min-h-screen px-4 items-center flex justify-center relative bg-[linear-gradient(160deg,_#fff_50%,_#fdeb00_50%)]"
         id="Contact"
+        style={{y:y}}
     >
       <motion.div
         className="md:w-1/2 flex flex-col gap-4"
@@ -36,7 +44,7 @@ const Contact = (props: Props) => {
 
     </motion.div>
       <Footer />
-    </section>
+    </motion.section>
   )
 }
 

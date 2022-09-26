@@ -45,6 +45,5 @@ Visit my website:
 
 // todo
 top: parallax and background animation
-about & projects & contact animation scroll and appear from bottom
 contact: email click and copy, mouse
 project: screenshot
