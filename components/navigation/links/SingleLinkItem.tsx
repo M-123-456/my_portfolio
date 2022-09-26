@@ -1,15 +1,15 @@
+import { useEffect } from 'react';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 // Context
 import { useStore } from '../../../store';
 
-// Constants
+// Data
 import { NAVIGATION } from '../../../data/constants';
 
-// utils
+// Utils
 import { classNames } from '../../../utils/classNames';
 
 // Types

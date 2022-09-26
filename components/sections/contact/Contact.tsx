@@ -8,10 +8,7 @@ import Footer from '../../Footer'
 import Email from './Email'
 import Socials from './Socials'
 
-
 const Contact = () => {
-
-
   return (
     <motion.section
         className="min-h-screen px-4 items-center flex justify-center relative bg-[linear-gradient(160deg,_#fff_50%,_#fdeb00_50%)]"

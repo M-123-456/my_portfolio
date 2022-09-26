@@ -1,7 +1,6 @@
 // Types
 import { IProjectsData } from '../types';
 
-
 export const projects: IProjectsData[] = [
     {
         name: "Portfolio Website",

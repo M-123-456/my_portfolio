@@ -5,7 +5,7 @@ import { IProjectsData } from '../../../../types';
 // Data
 import { cardVariants } from '../../../../data/animationVariants';
 
-import SecondaryButton from '../../../buttons/SecondaryButton';
+import Button from '../../../buttons/Button';
 
 type Props = {
     project: IProjectsData;
@@ -28,14 +28,14 @@ const ProjectInfo: React.FC<Props> = ({ project }) => {
             >
                 {project.tech}
             </h5>
-            <SecondaryButton>
+            <Button>
                 <a href={project.github}>Go to GitHub</a>
-            </SecondaryButton>
+            </Button>
             {
                 project.website && 
-                <SecondaryButton>
+                <Button>
                     <a href={project.website}>Visit Website</a>
-                </SecondaryButton>
+                </Button>
             }
         </motion.div>
   )

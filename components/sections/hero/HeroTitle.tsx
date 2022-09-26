@@ -5,7 +5,6 @@ import { authorData } from '../../../data/authorData';
 import { containerVariants } from '../../../data/animationVariants';
 
 
-
 const HeroTitle = () => {
   return (
     <motion.div

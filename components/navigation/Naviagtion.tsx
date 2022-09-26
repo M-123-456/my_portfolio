@@ -1,27 +1,11 @@
 import { Disclosure } from '@headlessui/react'
-import { motion } from 'framer-motion';
-
-// Context
-import { useStore } from '../../store';
-
-// Data
-import { NAVIGATION } from '../../data/constants';
-import { containerVariants } from '../../data/animationVariants';
 
 // Components
 import MenuButton from './mobile/MenuButton';
 import MobileLinks from './mobile/MobileLinks';
 import Links from './links/Links';
 
-// Types
-import { INavigation } from '../../types';
-
 const Naviagtion = () => {
-
-  const navigation = useStore(state => state.navigation);
-  console.log(navigation)
-
-  
 
   return (
       <Disclosure as="nav" >

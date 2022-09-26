@@ -4,7 +4,7 @@ type Props = {
     children: React.ReactNode
 }
 
-const SecondaryButton: React.FC<Props> = ( { children } ) => {
+const Button: React.FC<Props> = ( { children } ) => {
   return (
     <button
       className="relative inline-block px-4 py-2 font-medium group"
@@ -18,4 +18,4 @@ const SecondaryButton: React.FC<Props> = ( { children } ) => {
   )
 }
 
-export default SecondaryButton;
+export default Button;

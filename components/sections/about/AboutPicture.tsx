@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+
+// Data
 import { containerVariants } from '../../../data/animationVariants';
 
-type Props = {}
 
-const AboutPicture = (props: Props) => {
+const AboutPicture = () => {
   return (
     <div
       className="mt-16 md:w-1/2 md:self-end md:justify-self-end"

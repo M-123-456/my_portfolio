@@ -4,17 +4,8 @@ import { motion } from 'framer-motion';
 import { useStore } from '../../../store';
 import { containerVariants } from '../../../data/animationVariants';
 
-// Types
-// import { INavigation } from '../../../types';
-
 // Components
 import SingleLinkItem from './SingleLinkItem';
-
-
-// type Props = {
-//     navigation: INavigation[];
-//     setNavigation: Dispatch<SetStateAction<INavigation[]>>;
-// }
 
 const Links= () => {
 

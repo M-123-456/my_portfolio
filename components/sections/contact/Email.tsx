@@ -1,8 +1,7 @@
 import { authorData } from '../../../data/authorData';
 
-type Props = {}
 
-const Email = (props: Props) => {
+const Email = () => {
 
     const copyToClipboard = (email:string) => {
         navigator.clipboard.writeText(email)

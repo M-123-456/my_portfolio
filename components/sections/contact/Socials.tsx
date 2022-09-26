@@ -1,9 +1,7 @@
-import SecondaryButton from '../../buttons/SecondaryButton'
+import Button from '../../buttons/Button'
 import { authorData } from '../../../data/authorData';
 
-type Props = {}
-
-const Socials = (props: Props) => {
+const Socials = () => {
   return (
     <div>
         <p
@@ -15,14 +13,14 @@ const Socials = (props: Props) => {
             className="mt-6 flex justify-center gap-12"
         >
             <li>
-            <SecondaryButton>
+            <Button>
                 <a href={authorData.github}>GitHub</a>
-            </SecondaryButton>
+            </Button>
             </li>
             <li>
-            <SecondaryButton>
+            <Button>
                 <a href={authorData.linkedIn}>LinkedIn</a>
-            </SecondaryButton>
+            </Button>
             </li>
         </ul>
     </div>

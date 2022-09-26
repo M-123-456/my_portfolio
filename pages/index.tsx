@@ -1,23 +1,19 @@
 import { useEffect } from 'react';
-
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
-import { Parallax } from 'react-scroll-parallax';
-
+// Context
 import { useStore } from '../store';
 
+// Components
 import About from '../components/sections/about/About';
 import Contact from '../components/sections/contact/Contact';
 import Hero from '../components/sections/hero/Hero';
 import Projects from '../components/sections/projects/Projects';
 import Navigation from '../components/navigation/Naviagtion';
 
-
-
 const Home: NextPage = () => {
   
-
   const scrollY = useStore(state => state.scrollY);
   const setScrollY = useStore(state => state.setScrollY);
   const setYOfSection = useStore(state => state.setYOfSection);
@@ -29,11 +25,9 @@ const Home: NextPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps 
   }, [scrollY])
 
-  
+  // set position of all sections
+  // Wherever the scrollY position is, hero start should be set to 0
   useEffect(() => {
-
-    // set position of all sections. Wherever the scrollY position is, hero start should be set to 0
-
     // Hero
     const hero = document.querySelector("#Hero");
     const heroEnd = hero!.getBoundingClientRect().height;
@@ -55,8 +49,6 @@ const Home: NextPage = () => {
     setYOfSection("contact", projectsEnd, contactEnd);
 
   }, []);
-
-  
 
   return (
     <div

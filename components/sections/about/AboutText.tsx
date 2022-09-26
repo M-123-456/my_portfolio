@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { containerVariants } from '../../../data/animationVariants';
 
 // Components
-import SecondaryButton from '../../buttons/SecondaryButton';
+import Button from '../../buttons/Button';
 
 const AboutText = () => {
   return (
@@ -27,11 +27,11 @@ const AboutText = () => {
         <div
             className="flex justify-end pr-8 md:pt-10"
         >
-            <SecondaryButton>
+            <Button>
                 <a href="/mikigerlach_cv_en.pdf" download>
                     Download CV
                 </a>
-            </SecondaryButton>
+            </Button>
         </div>
     </motion.div>
   )
