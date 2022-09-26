@@ -1,6 +1,10 @@
-import PrimaryButton from '../../../buttons/PrimaryButton';
+import { motion } from 'framer-motion';
 
 import { IProjectsData } from '../../../../types';
+
+// Data
+import { cardVariants } from '../../../../data/animationVariants';
+
 import SecondaryButton from '../../../buttons/SecondaryButton';
 
 type Props = {
@@ -9,9 +13,11 @@ type Props = {
 
 const ProjectInfo: React.FC<Props> = ({ project }) => {
   return (
-    <div
-            className="w-[20rem] h-[20rem] bg-lightGray flex flex-col justify-center gap-4  px-3 border-2 border-raisinBlack"
-        >
+    <motion.div
+            className="w-full h-full bg-lightGray flex flex-col justify-center gap-4  px-3"
+            initial={cardVariants.hidden}
+                animate={cardVariants.visible}
+    >
             <h4
                 className="text-2xl text-raisinBlack"
             >
@@ -31,7 +37,7 @@ const ProjectInfo: React.FC<Props> = ({ project }) => {
                     <a href={project.website}>Visit Website</a>
                 </SecondaryButton>
             }
-        </div>
+        </motion.div>
   )
 }
 

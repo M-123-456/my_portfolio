@@ -13,3 +13,16 @@ export const containerVariants = {
     }
   },
 }
+
+export const cardVariants = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      type: 'ease-in',
+      duration: 0.5,
+    }
+  },
+}

@@ -15,12 +15,9 @@ import { classNames } from '../../../utils/classNames';
 // Types
 import { INavigation } from '../../../types';
 
-// Animation Variants
-import { navVariants } from '../../../data/variants';
 
 type Props = {
     item: INavigation;
-    // setNavigation: Dispatch<SetStateAction<INavigation[]>>;
 }
 
 const SingleLinkItem: React.FC<Props> = ({ item }) => {
@@ -30,6 +27,7 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
 
   const setNavCurrent = useStore(state => state.setNavCurrent)
   const scrollY = useStore(state => state.scrollY);
+  const yPages = useStore(state => state.yOfPages);
 
   
   // Everytime a section is selected, set current in navigation true. If not selected, set it to false. This state is used for the style to show the current section user is watching.
@@ -42,13 +40,13 @@ const SingleLinkItem: React.FC<Props> = ({ item }) => {
   // Set current in navigation depending on scrolling position
   useEffect(() => {
     let current = "";
-    if(scrollY >= NAVIGATION.TOP.POSITION_Y_START && scrollY < NAVIGATION.TOP.POSITION_Y_END!) {
+    if(scrollY >= yPages.TOP.start && scrollY < yPages.TOP.end) {
       current = NAVIGATION.TOP.NAME
-    } else if (scrollY >= NAVIGATION.ABOUT.POSITION_Y_START && scrollY < NAVIGATION.ABOUT.POSITION_Y_END!) {
+    } else if (scrollY >= yPages.ABOUT.start && scrollY < yPages.ABOUT.end) {
       current = NAVIGATION.ABOUT.NAME
-    } else if (scrollY >= NAVIGATION.PROJECTS.POSITION_Y_START && scrollY < NAVIGATION.PROJECTS.POSITION_Y_END!) {
+    } else if (scrollY >= yPages.PROJECTS.start && scrollY < yPages.PROJECTS.end) {
       current = NAVIGATION.PROJECTS.NAME
-    } else if (scrollY >= NAVIGATION.CONTACT.POSITION_Y_START) {
+    } else if (scrollY >= yPages.CONTACT.start) {
       current = NAVIGATION.CONTACT.NAME
     }
     setNavCurrent(current);

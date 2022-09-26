@@ -16,17 +16,31 @@ import Navigation from '../components/navigation/Naviagtion';
 
 const Home: NextPage = () => {
 
-  const scrollY = useStore(state => state.scrollY)
+  const scrollY = useStore(state => state.scrollY);
   const setScrollY = useStore(state => state.setScrollY);
-  console.log(scrollY);
+  const navigation = useStore(state => state.navigation);
+  const setYOfPage = useStore(state => state.setYOfPage);
+  const yOfPages = useStore(state => state.yOfPages);
 
-  function useParallax(value: MotionValue<number>, distance: number) {
-    return useTransform(value, [0,1], [-distance, distance]);
-  }
+  console.log(scrollY);
+  console.log(yOfPages);
+
 
   useEffect(() => {
     window.addEventListener('scroll', setScrollY);
-  }, [])
+  }, [scrollY])
+
+  
+  useEffect(() => {
+    navigation.forEach(item => {
+      const page = document.querySelector(item.href);
+      const start = page?.getBoundingClientRect().top;
+      const end = page?.getBoundingClientRect().bottom;
+      console.log('top', start, 'bottom', end);
+      setYOfPage(item.name.toUpperCase(), start, end)
+    })
+  }, [scrollY])
+
 
   return (
     <div
@@ -53,7 +67,9 @@ const Home: NextPage = () => {
         <Navigation />
       </header>
 
-      <main>
+      <main
+        style={{height: yOfPages.CONTACT.end}}
+      >
         <Top speed={4} />
         <About speed={-10} />
         <Projects speed={-10} />

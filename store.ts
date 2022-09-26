@@ -4,28 +4,37 @@ import create from 'zustand';
 import { NAVIGATION } from './data/constants';
 
 // Types
-import { INavigation } from './types';
+import { INavigation, IYPages } from './types';
+
+
+
+const initialYPages: IYPages = {
+  TOP: { start: 0, end: 555},
+  ABOUT: {start: 556, end: 1127},
+  PROJECTS: {start: 1128, end: 1883},
+  CONTACT: {start: 1884, end: 2454},
+}
 
 const initialNav: INavigation[] = [
   { 
     name: NAVIGATION.TOP.NAME, 
     href: NAVIGATION.TOP.HREF, 
-    current: false 
+    current: false,
   },
   { 
     name: NAVIGATION.ABOUT.NAME, 
     href: NAVIGATION.ABOUT.HREF, 
-    current: false 
+    current: false,
   },
   { 
     name: NAVIGATION.PROJECTS.NAME, 
     href: NAVIGATION.PROJECTS.HREF, 
-    current: false 
+    current: false,
   },
   { 
     name: NAVIGATION.CONTACT.NAME, 
     href: NAVIGATION.CONTACT.HREF, 
-    current: false 
+    current: false,
   },
 ]
 
@@ -34,6 +43,8 @@ interface useStoreState {
     setScrollY: () => void;
     navigation: INavigation[];
     setNavCurrent: (name: string) => void;
+    yOfPages: IYPages;
+    setYOfPage: (name:string, start: number|undefined, end:number|undefined) => void;
 }
 
 export const useStore = create<useStoreState>((set) => ({
@@ -63,5 +74,17 @@ export const useStore = create<useStoreState>((set) => ({
                 navigation: _navigation
             }
         })
+    },
+    yOfPages: initialYPages,
+    setYOfPage: (name, start, end) => {
+        set((state) => ({
+            yOfPages: {
+                ...state.yOfPages,
+                [name]: {
+                    start: start,
+                    end: end
+                }
+            }
+        }))
     }
 })) 

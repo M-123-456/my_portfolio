@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { IProjectsData } from '../../../../types';
 
 // Data
-import { containerVariants } from '../../../../data/animationVariants';
+import { cardVariants, containerVariants } from '../../../../data/animationVariants';
 
 // Components
 import ProjectInfo from './ProjectInfo';
@@ -29,14 +29,18 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
         whileInView={containerVariants.visible}
 
     >
+        <div
+            className="border-raisinBlack border-2 w-[20rem] h-[20rem]"
+        >
         {/* If pictures are hovered, info of the project will be shown */}
         {
             infoShown ? 
             <ProjectInfo 
                 project={project}
             /> :
-            <div
-                className="border-raisinBlack border-2 w-[20rem] h-[20rem]"
+            <motion.div
+                initial={cardVariants.hidden}
+                animate={cardVariants.visible}
             >
                 <Image 
                     src={project.image}
@@ -45,9 +49,9 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     objectFit="cover"
                     className="relative h-full"
                 />
-            </div>
-
+            </motion.div>
         }
+        </div>
         
        
         

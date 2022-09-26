@@ -9,8 +9,6 @@ export interface INavigation {
 export interface INavConstantsSingleItem {
   NAME: string;
   HREF: string;
-  POSITION_Y_START: number;
-  POSITION_Y_END?: number;
 }
 
 // todo optimize 
@@ -38,15 +36,9 @@ export interface IProjectsData {
   website?: string;
 }
 
-// animation variants
-export interface INavVariants {
-    hidden: {
-        width: number 
-    },
-    visible:{
-        width: string
-    },
-    transition: {
-        ease: string
-    }
+export interface IYPages {
+  TOP: { start: number, end: number},
+  ABOUT: {start: number, end: number},
+  PROJECTS: {start: number, end: number},
+  CONTACT: {start: number, end: number},
 }

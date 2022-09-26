@@ -3,11 +3,9 @@ import AboutPicture from './AboutPicture';
 import AboutText from './AboutText';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-
 type Props = {
   speed: number;
 }
-
 
 const About: React.FC<Props> = ({ speed }) => {
   const ref = useRef(null);
