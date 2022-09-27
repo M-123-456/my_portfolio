@@ -18,7 +18,7 @@ const Projects = () => {
     >
       <ProjectsText />
       <div
-        className="mt-10 flex flex-wrap justify-center gap-8 pr-4"
+        className="mt-10 flex flex-wrap justify-center gap-8"
       >
         {
           projects.map(project => (

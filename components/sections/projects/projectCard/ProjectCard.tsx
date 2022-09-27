@@ -30,7 +30,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
 
     >
         <div
-            className="border-raisinBlack border-2 w-[20rem] h-[20rem]"
+            className="border-raisinBlack border-2 w-[15rem] h-[15rem] md:w-[20rem] md:h-[20rem]"
         >
         {/* If pictures are hovered, info of the project will be shown */}
         {

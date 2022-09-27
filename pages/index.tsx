@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
+import { useEffect, useState, MouseEvent } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
+import { motion } from 'framer-motion';
 
 // Context
 import { useStore } from '../store';
@@ -12,18 +13,24 @@ import Hero from '../components/sections/hero/Hero';
 import Projects from '../components/sections/projects/Projects';
 import Navigation from '../components/navigation/Naviagtion';
 
+
+
+
 const Home: NextPage = () => {
   
   const scrollY = useStore(state => state.scrollY);
   const setScrollY = useStore(state => state.setScrollY);
   const setYOfSection = useStore(state => state.setYOfSection);
 
+
   useEffect(() => {
     window.addEventListener('scroll', setScrollY);
     
     console.log(scrollY);
     // eslint-disable-next-line react-hooks/exhaustive-deps 
-  }, [scrollY])
+  }, [scrollY]);
+
+
 
   // set position of all sections
   // Wherever the scrollY position is, hero start should be set to 0
@@ -71,7 +78,6 @@ const Home: NextPage = () => {
         />
       </Head>
 
-      <div id="Cursor"></div>
 
       <header className="fixed w-screen z-30 flex justify-end">
         <Navigation />
