@@ -47,6 +47,7 @@ const ProjectCard: React.FC<Props> = ({ project }) => {
                     width={400}
                     height={400}
                     objectFit="cover"
+                    alt={project.name}
                     className="relative h-full"
                 />
             </motion.div>
