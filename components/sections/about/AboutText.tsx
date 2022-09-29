@@ -27,11 +27,6 @@ const AboutText = () => {
         <div
             className="flex justify-end pr-8 md:pt-10"
         >
-            <Button>
-                <a href="/mikigerlach_cv_en.pdf" download>
-                    Download CV
-                </a>
-            </Button>
         </div>
     </motion.div>
   )
