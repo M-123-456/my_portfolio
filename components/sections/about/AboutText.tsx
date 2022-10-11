@@ -22,7 +22,10 @@ const AboutText = () => {
         <p
             className="my-6 px-4 md:pl-4"
         >
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, molestiae delectus! Amet, tempore unde. Voluptate maiores adipisci provident dolores iusto molestias eum ea, voluptatibus, omnis quia veniam corporis reprehenderit quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti, reprehenderit dolores. Fuga doloribus porro repudiandae eligendi cum iusto sit quidem, neque quos commodi vel facilis perspiciatis dolorum ut! Quibusdam, accusamus!
+            Hi, I'm Miki and I'm from Japan. I'm here in Germany since 2009 to start a new stage of my life together with my husband. Since we became parents of one, two, three children,  
+            After 12 years in a Japanese company in Düsseldorf, where I learned a lot about business, supply chain managemen, Excel, project management, reporting and the ups and downs of intercultural teams, I am currently reinventing myself. 
+            
+            Since early 2020, I've been digging into the mysteries of development. What gets me out of bed in the morning is my will to constanly learn new things and grow personally. I am looking forward to working on exciting projects in an inspiring environment.
         </p>
         <div
             className="flex justify-end pr-8 md:pt-10"
