@@ -54,6 +54,7 @@ const Home: NextPage = () => {
     const contact = document.querySelector("#Contact");
     const contactEnd = projectsEnd + contact!.getBoundingClientRect().height;
     setYOfSection("contact", projectsEnd, contactEnd);
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps 
 
   }, []);
