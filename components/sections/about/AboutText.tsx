@@ -22,10 +22,10 @@ const AboutText = () => {
         <p
             className="my-6 px-4 md:pl-4"
         >
-            Hi, I'm Miki and I'm from Japan. I'm here in Germany since 2009 to start a new stage of my life together with my husband. Since we became parents of one, two, three children,  
+            Hi, I am Miki and I came from Japan to Germany in 2009 to start a new stage of my life together with my husband. Since we became parents of one, two, three children,  
             After 12 years in a Japanese company in Düsseldorf, where I learned a lot about business, supply chain managemen, Excel, project management, reporting and the ups and downs of intercultural teams, I am currently reinventing myself. 
             
-            Since early 2020, I've been digging into the mysteries of development. What gets me out of bed in the morning is my will to constanly learn new things and grow personally. I am looking forward to working on exciting projects in an inspiring environment.
+            Since early 2020, I&aposve been digging into the mysteries of development. What gets me out of bed in the morning is my will to constanly learn new things and grow personally. I am looking forward to working on exciting projects in an inspiring environment.
         </p>
         <div
             className="flex justify-end pr-8 md:pt-10"
