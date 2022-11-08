@@ -1,7 +1,6 @@
-import { useEffect, useState, MouseEvent } from 'react';
+import { useEffect } from 'react';
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import { motion } from 'framer-motion';
 
 // Context
 import { useStore } from '../store';
@@ -12,8 +11,6 @@ import Contact from '../components/sections/contact/Contact';
 import Hero from '../components/sections/hero/Hero';
 import Projects from '../components/sections/projects/Projects';
 import Navigation from '../components/navigation/Naviagtion';
-
-
 
 
 const Home: NextPage = () => {
@@ -53,9 +50,9 @@ const Home: NextPage = () => {
     // Contact
     const contact = document.querySelector("#Contact");
     const contactEnd = projectsEnd + contact!.getBoundingClientRect().height;
+    // eslint-disable-next-line react-hooks/exhaustive-deps 
     setYOfSection("contact", projectsEnd, contactEnd);
     
-    // eslint-disable-next-line react-hooks/exhaustive-deps 
 
   }, []);
 
@@ -68,18 +65,7 @@ const Home: NextPage = () => {
         <meta name="portfolio_website" content="Portfolio website of Miki Gerlach" />
         <link rel="icon" href="/favicon.ico" />
 
-        {/* Font */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet"
-        />
       </Head>
-
 
       <header className="fixed w-screen z-30 flex justify-end">
         <Navigation />
